@@ -40,7 +40,7 @@
 </head>
 <body>
     <div class="sidebar">
-        <img src="profile.jpg" alt="Profile Picture">
+        <img src="profile.jpg" alt="Profile Picture" class="profile-picture">
         <h2>Alexandru Dumitrescu</h2>
         <p>PhD student in Machine Learning</p>
         <a href="https://www.aalto.fi/en">Aalto University</a>
@@ -60,6 +60,10 @@
         </div>
     </div>
     <style>
+        .profile-picture {
+            width: 150px; /* Set the desired width */
+            height: auto; /* Maintain aspect ratio */
+        }
         .social-icons {
             display: flex;
             gap: 10px;
