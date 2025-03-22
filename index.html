@@ -5,17 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alexandru Dumitrescu</title>
     <style>
+        .sidebar-title{
+            margin-top: -400px; /* Adjust this value to align with the content */
+        }
+        .section {
+            display: flex;
+            flex: 1;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             height: 100vh;
-            background-color: #f4f4f4;
+            background-color: #5f5f5f;
         }
         .sidebar {
             width: 40%;
-            background-color: #333;
+            background-color: #5f5f5f;
             color: white;
             display: flex;
             flex-direction: column;
@@ -24,8 +36,6 @@
             padding: 20px;
         }
         .sidebar img {
-            width: 166px;
-            height: 158px;
             border-radius: 70%;
             margin-bottom: 20px;
         }
@@ -34,51 +44,245 @@
             padding: 40px;
         }
         h1 {
-            color: #333;
+            color: #ffffff;
+            font-size: 2.5em;
         }
-    </style>
-</head>
-<body>
-    <div class="sidebar">
-        <img src="profile.jpg" alt="Profile Picture" class="profile-picture">
-        <h2>Alexandru Dumitrescu</h2>
-        <p>PhD student in Machine Learning</p>
-        <a href="https://www.aalto.fi/en">Aalto University</a>
-        <div class="social-icons">
-            <a href="mailto:alexandru.dumitrescu@aalto.fi">
-                <img src="mail.png" alt="Email" class="icon">
-            </a>
-            <a href="https://scholar.google.com/citations?hl=en&user=NjxnhDQAAAAJ">
-                <img src="googlescholar-svgrepo-com.svg" alt="scholar" class="icon">
-            </a>
-            <a href="https://www.linkedin.com/in/alexandru-dumitrescu-809bb1141/">
-                <img src="InBug-Black.png" alt="LinkedIn" class="icon">
-            </a>
-            <a href="https://github.com/Dumitrescu-Alexandru">
-                <img src="github-mark.svg" alt="GitHub" class="icon">
-            </a>
-        </div>
-    </div>
-    <style>
+        h2 {
+            color: #ffffff;
+            font-size: 2.5em;
+        }
         .profile-picture {
-            width: 150px; /* Set the desired width */
+            width: 250px; /* Set the desired width */
             height: auto; /* Maintain aspect ratio */
         }
         .social-icons {
             display: flex;
-            gap: 10px;
+            gap: 20px;
         }
         .icon {
-            width: 8px;
-            height: 8px;
-            transition: transform 0.3s;
+        width: 48px; /* Set a smaller width */
+        height: 48px; /* Set a smaller height */
+        transition: transform 0.3s;
         }
         .icon:hover {
             transform: scale(1.5);
         }
+        .light-grey-link {
+            color: rgb(108, 169, 163);
+            text-decoration: none; /* Remove underline */
+            font-size: 1.1em;
+        }
+        .light-grey-link:visited {
+            color: rgb(108, 169, 163);
+            font-size: 1.1em;
+        }
+        .light-grey-link:hover {
+            text-decoration: underline; /* Add underline on hover */
+        }
+        .small-descriptions {
+            font-size: 1em;
+            color:gray;
+        }
+        .big-descriptions {
+            font-size: 1.1em;
+            color:rgb(209, 209, 209);
+        }
+        .headers {
+            font-size: 2.5em;
+        }
+
+
+        .custom-bullet-list {
+            font-size: 1.1em;
+            list-style-type: none; /* Remove default bullets */
+            padding-left: 20px; /* Add some padding to align text */
+        }
+        .custom-bullet-list li {
+            position: relative;
+            padding-left: 30px; /* Add space for the bullet image */
+            color: #ffffff;
+            margin-bottom: 30px; /* Add space between items */
+        }
+        .custom-bullet-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.0em; /* Adjust this value to vertically align the image */
+            width: 20px; /* Set the desired width */
+            height: 20px; /* Set the desired height */
+            background-image: url('cap2.png'); /* Set the custom bullet image */
+            background-size: contain; /* Ensure the image fits within the dimensions */
+            background-repeat: no-repeat;
+        }
+
+
+        .simple_sublist {
+            font-size: 0.9em;
+            list-style-type: none; /* Remove default bullets */
+            padding-left: 20px; /* Add some padding to align text */
+            margin-bottom: 0px; /* Add space between items */
+        }
+        .simple_sublist li {
+            position: relative;
+            padding-left: 20px; /* Add space for the bullet image */
+            color: #ffffff;
+            margin-bottom: 5px; /* Add space between items */
+        }
+        .simple_sublist li::before {
+            background-image: none;
+        }
+
+
+
+
+        .publications-bullet-list {
+            font-size: 1.1em;
+            list-style-type: none; /* Remove default bullets */
+            padding-left: 0px; /* Add some padding to align text */
+        }
+        .publications-bullet-list li {
+            position: relative;
+            padding-left: 0px; /* Add space for the bullet image */
+            color: #ffffff;
+            margin-bottom: 30px; /* Add space between items */
+        }
+
+
+        .section-1 .sidebar {
+            background-color: #333;
+        }
+        .section-1 .content {
+            background-color: #333;
+        }
+        .section-2 .sidebar {
+            background-color: #444;
+        }
+        .section-2 .content {
+            background-color: #444;
+        }
+        .section-3 .sidebar {
+            background-color: #333;
+        }
+        .section-3 .content {
+            background-color: #333;
+        }
     </style>
-    <div class="content">
-        <h1>Welcome to My Profile</h1>
+</head>
+<body>
+    <div class="container">
+        <div class="section section-1">
+            <div class="sidebar">
+                <img src="profile.jpg" alt="Profile Picture" class="profile-picture">
+                <h2 class="headers">Alexandru Dumitrescu</h2>
+                <p class="big-descriptions">PhD student in Machine Learning</p>
+                <a href="https://www.aalto.fi/en" class="light-grey-link">Aalto University</a>
+                <p> </p>
+                <div class="social-icons">
+                    <a href="mailto:alexandru.dumitrescu@aalto.fi">
+                        <img src="mail2.svg" alt="Email" class="icon">
+                    </a>
+                    <a href="https://scholar.google.com/citations?hl=en&user=NjxnhDQAAAAJ">
+                        <img src="googlescholar-svgrepo-com.svg" alt="scholar" class="icon">
+                    </a>
+                    <a href="https://www.linkedin.com/in/alexandru-dumitrescu-809bb1141/">
+                        <img src="iconmonstr-linkedin-3.svg" alt="LinkedIn" class="icon">
+                    </a>
+                    <a href="https://github.com/Dumitrescu-Alexandru">
+                        <img src="github-mark.svg" alt="GitHub" class="icon">
+                    </a>
+                </div>
+            </div>
+        
+            <div class="content">
+                <h1>Biography</h1>
+                <p class="big-descriptions">I am a PhD student at <a href="https://www.aalto.fi/en" class="light-grey-link">Aalto University</a>, 
+                                            <a href="https://www.aalto.fi/en/department-of-computer-science" class="light-grey-link">Department of Computer Science</a>, 
+                                            advised by <a href="https://www.aalto.fi/fi/ihmiset/harri-lahdesmaki" class="light-grey-link">Prof. Harri Lähdesmäki</a>.
+                                            My research focus is on Machine Learning methods for sciences. I have developed deep generative methods (diffusion models)
+                                            on 3D drug-like molecule data, discriminative methods for protein sequences (in immunology and signal peptides), and peptide generative methods.
+                <h2 class="headers">Education</h2>
+                <ul class="custom-bullet-list">
+                    <li>
+                        PhD in Machine Learning, 2021-present
+                        <br>
+                        <span style="color:rgb(209, 209, 209);">Aalto University</span>
+                        <ul class="simple_sublist">
+                            <li>Collaboration with <span style="color:rgb(209, 209, 209);">Broad Institute of MIT and Harvard (Feb-July, 2024)</span></li>
+                            <li>Collaboration with <span style="color:rgb(209, 209, 209);">HiLIFE, University of Helsinki (2021-2023)</span></li>
+                        </ul>
+                    </li>
+                    <li>
+                        MSc in Machine Learning, 2018-2021
+                        <br>
+                        <span style="color:rgb(209, 209, 209);">Aalto University</span>
+                        <ul class="simple_sublist">
+                            <li>Thesis: <a href="https://aaltodoc.aalto.fi/items/84293ee4-3a74-4691-9b63-d7fbb6f8ecd1" class="light-grey-link">TCR Sequence Representations Using Deep, Contextualized Language Models.</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        BSc in Computer System Engineering, 2014-2018
+                        <br>
+                        <span style="color:rgb(209, 209, 209);">Politehnica University of Buchares</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="section section-2">
+            <div class="sidebar">
+                <h1 class="sidebar-title">Publications</h1>
+            </div>
+        
+            <div class="content">
+                
+                <ul class="publications-bullet-list">
+                    <li><span class="big-descriptions">Alexandru Dumitrescu, Dani Korpela, Markus Heinonen, Yogesh Verma, Valerii Iakovlev, Vikas Garg, Harri Lähdesmäki,</span>
+                         <a href="https://dumitrescu-alexandru.github.io/FMG-web/" class="light-grey-link"> E(3)-equivariant models cannot learn chirality: Field-based molecular generation.</a>
+                         ICLR 2025.</li>
+                    <li><span class="big-descriptions">Alexandru Dumitrescu, Emmi Jokinen, Dani Korpela, Harri Lähdesmäki,</span>
+                        <a href="https://academic.oup.com/bioinformatics/article/39/Supplement_1/i347/7210432?login=false" class="light-grey-link"> Structure-guided T cell receptor and epitope interaction prediction.</a>
+                        ISMB 2023 conference (published in Bioinformatics).</li>
+                    <li><span class="big-descriptions">Alexandru Dumitrescu, Emmi Jokinen, Dani Korpela, Harri Lähdesmäki,</span>
+                        <a href="https://icml-compbio.github.io/2023/papers/WCBICML2023_paper75.pdf" class="light-grey-link"> Structure-guided T cell receptor and epitope interaction prediction.</a>
+                        ICML CompBio Workshop 2023.</li>
+                    <li><span class="big-descriptions">Emmi Jokinen, Alexandru Dumitrescu, Jani Huuhtanen, Vladimir Gligorijević, Satu Mustjoki, Richard Bonneau, Markus Heinonen, Harri Lähdesmäki,</span>
+                        <a href="https://academic.oup.com/bioinformatics/article/39/1/btac788/6881078?login=false" class="light-grey-link">TCRconv: predicting recognition between T cell receptors and epitopes using contextualized motifs.</a>
+                        Bioinformatics 2023.</li>
+                    <li><span class="big-descriptions">Dani Korpela, Emmi Jokinen, Alexandru Dumitrescu, Jani Huuhtanen, Satu Mustjoki, Harri Lähdesmäki,</span>
+                        <a href="https://academic.oup.com/bioinformatics/article/39/1/btac788/6881078?login=false" class="light-grey-link">EPIC-TRACE: predicting TCR binding to unseen epitopes using attention and contextualized embeddings.</a>
+                        Bioinformatics 2023.</li>
+                </ul>
+            </div>
+        </div>
+        <!-- 
+        <div class="section section-3">
+            <div class="sidebar">
+                <h1 class="sidebar-title">Publications</h1>
+            </div>
+        
+            <div class="content">
+                
+                <ul class="publications-bullet-list">
+                    <li><span class="big-descriptions">Alexandru Dumitrescu, Dani Korpela, Markus Heinonen, Yogesh Verma, Valerii Iakovlev, Vikas Garg, Harri Lähdesmäki,</span>
+                         <a href="https://dumitrescu-alexandru.github.io/FMG-web/" class="light-grey-link"> E(3)-equivariant models cannot learn chirality: Field-based molecular generation.</a>
+                         ICLR 2025.</li>
+                    <li><span class="big-descriptions">Alexandru Dumitrescu, Emmi Jokinen, Dani Korpela, Harri Lähdesmäki,</span>
+                        <a href="https://academic.oup.com/bioinformatics/article/39/Supplement_1/i347/7210432?login=false" class="light-grey-link"> Structure-guided T cell receptor and epitope interaction prediction.</a>
+                        ISMB 2023 conference (published in Bioinformatics).</li>
+                    <li><span class="big-descriptions">Alexandru Dumitrescu, Emmi Jokinen, Dani Korpela, Harri Lähdesmäki,</span>
+                        <a href="https://icml-compbio.github.io/2023/papers/WCBICML2023_paper75.pdf" class="light-grey-link"> Structure-guided T cell receptor and epitope interaction prediction.</a>
+                        ICML CompBio Workshop 2023.</li>
+                    <li><span class="big-descriptions">Emmi Jokinen, Alexandru Dumitrescu, Jani Huuhtanen, Vladimir Gligorijević, Satu Mustjoki, Richard Bonneau, Markus Heinonen, Harri Lähdesmäki,</span>
+                        <a href="https://academic.oup.com/bioinformatics/article/39/1/btac788/6881078?login=false" class="light-grey-link">TCRconv: predicting recognition between T cell receptors and epitopes using contextualized motifs.</a>
+                        Bioinformatics 2023.</li>
+                    <li><span class="big-descriptions">Dani Korpela, Emmi Jokinen, Alexandru Dumitrescu, Jani Huuhtanen, Satu Mustjoki, Harri Lähdesmäki,</span>
+                        <a href="https://academic.oup.com/bioinformatics/article/39/1/btac788/6881078?login=false" class="light-grey-link">EPIC-TRACE: predicting TCR binding to unseen epitopes using attention and contextualized embeddings.</a>
+                        Bioinformatics 2023.</li>
+                </ul>
+            </div>
+        </div>
+        -->
     </div>
 </body>
 </html>
